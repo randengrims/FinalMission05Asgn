@@ -1,17 +1,35 @@
-﻿<h2>Pricing for Snowboarding Lessons</h2>
-<form>
+﻿@{
+    ViewData["Title"] = "Pricing";
+}
+
+<h2>Pricing for Snowboarding Lessons</h2>
+
+<form id="pricingForm">
     <label>First Name</label>
-    <input />
-    <br />
-    <label>Last Name</label>
-    <input />
-    <br />
-    <label>Number of hours wanted to learn the hobby</label>
-    <input />
-    <br />
-    <label>How much I charge per hour</label>
-    <input type="text" value="$20/hour" readonly>
+    <input type="text" id="firstName" required />
     <br />
 
-    <input type="button" value="Calculate Total" id="btnsubmit" />
+    <label>Last Name</label>
+    <input type="text" id="lastName" required />
+    <br />
+
+    <label>Number of hours wanted to learn the hobby</label>
+    <input type="number" id="hours" min="1" required />
+    <br />
+
+    <label>How much I charge per hour</label>
+    <input type="text" id="rate" value="$20/hour" readonly />
+    <br />
+
+    <input type="button" value="Calculate Total" id="btnCalculate" />
+    <br />
+
+    <h3>Total Cost: <span id="totalCost">$0</span></h3>
 </form>
+
+<!-- Back to Homepage Button -->
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/pricingCalculator.js"></script>

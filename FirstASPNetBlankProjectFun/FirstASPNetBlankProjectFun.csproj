@@ -10,8 +10,4 @@
     <None Include="wwwroot\lumon-globe.jpg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
